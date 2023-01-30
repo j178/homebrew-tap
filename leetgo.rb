@@ -11,7 +11,7 @@ class Leetgo < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/j178/leetgo/releases/download/v0.1.6/leetgo_Darwin_x86_64.tar.gz"
-      sha256 "9dc6e3fe0ae7c97261e25ec16b14cbedd893330de5ab790e03e8b2a4bdf24c8d"
+      sha256 "e720c373c2162605a58428ed4bd7b46a6566d1c6e4bb4f1e4f8bf7ffd8624863"
 
       def install
         bin.install "leetgo"
@@ -22,7 +22,7 @@ class Leetgo < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/j178/leetgo/releases/download/v0.1.6/leetgo_Darwin_arm64.tar.gz"
-      sha256 "2b40462dcf20906c1e263f219de8f91dab47df773668df624329ab7289be97ef"
+      sha256 "e4ec3a1d77adaca297db8e3fa99f0ee6c14daf1bb21905d7f3b30bc2308309f9"
 
       def install
         bin.install "leetgo"
@@ -36,7 +36,7 @@ class Leetgo < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/j178/leetgo/releases/download/v0.1.6/leetgo_Linux_arm64.tar.gz"
-      sha256 "d9bafffaa40811f2828d955bfb299a8c94325aba70a53419b2fc09ced3c3a2e3"
+      sha256 "7af7324e83570be561f9f11f03003a0113af43ff6751a1bedaf2f1249c4d54f8"
 
       def install
         bin.install "leetgo"
@@ -47,7 +47,7 @@ class Leetgo < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/j178/leetgo/releases/download/v0.1.6/leetgo_Linux_x86_64.tar.gz"
-      sha256 "5e9e6d2e8ce93ade53c373fe729f19e5156a0365a463239e14576f091500ba73"
+      sha256 "513807e3839885521c1a746680b76d4338e500eb3c165679ad8c168c391ed9a4"
 
       def install
         bin.install "leetgo"
