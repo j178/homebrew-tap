@@ -5,21 +5,21 @@
 class Chatgpt < Formula
   desc "A simple cli wrapper for ChatGPT API, powered by GPT-3.5-turbo model."
   homepage "https://github.com/j178/chatgpt"
-  version "0.5.2"
+  version "0.6.0-beta"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/j178/chatgpt/releases/download/v0.5.2/chatgpt_Darwin_arm64.tar.gz"
-      sha256 "9cdeda3b57571d836aa53ef5254f0c66efb09d09e19c7a633fbd43da379c2e40"
+    if Hardware::CPU.intel?
+      url "https://github.com/j178/chatgpt/releases/download/v0.6.0-beta/chatgpt_Darwin_x86_64.tar.gz"
+      sha256 "d76210a9da1512be68da0764befc5ac16062ba6b698f3e0b463997d53fc24376"
 
       def install
         bin.install "chatgpt"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/chatgpt/releases/download/v0.5.2/chatgpt_Darwin_x86_64.tar.gz"
-      sha256 "8180e460771c1dcf17bfda71ed1257f4aff796ede736e57dd89c136b33d77f7c"
+    if Hardware::CPU.arm?
+      url "https://github.com/j178/chatgpt/releases/download/v0.6.0-beta/chatgpt_Darwin_arm64.tar.gz"
+      sha256 "c8f9c320f2cdeb5cad46761a4f3622fd6e6356a7e4f3eea6b69ac7dfb395fae8"
 
       def install
         bin.install "chatgpt"
@@ -28,17 +28,17 @@ class Chatgpt < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/j178/chatgpt/releases/download/v0.5.2/chatgpt_Linux_arm64.tar.gz"
-      sha256 "a5f323ec709698189b0aa5cfdfe8a515baaf342f8b3e284b36b03051aeb1d3fc"
+    if Hardware::CPU.intel?
+      url "https://github.com/j178/chatgpt/releases/download/v0.6.0-beta/chatgpt_Linux_x86_64.tar.gz"
+      sha256 "66e38114c5941aa23aee9c6a64000e7b36058fe84d279adec57555daa67a7bf4"
 
       def install
         bin.install "chatgpt"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/chatgpt/releases/download/v0.5.2/chatgpt_Linux_x86_64.tar.gz"
-      sha256 "06ab34fc36ffeb183cae4556416e46e8b4aa925bebf433d37fe399de8bf46036"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/j178/chatgpt/releases/download/v0.6.0-beta/chatgpt_Linux_arm64.tar.gz"
+      sha256 "78330ecb00f980cfa5850dfcf9c16fb545bed1f61c7cd9f60d292eca56b8ba89"
 
       def install
         bin.install "chatgpt"
