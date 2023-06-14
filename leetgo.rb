@@ -5,13 +5,13 @@
 class Leetgo < Formula
   desc "leetgo is a command line tool for leetcode.com. It can help you to login, submit, test, and view your submissions."
   homepage "https://github.com/j178/leetgo"
-  version "1.2"
+  version "1.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/j178/leetgo/releases/download/v1.2/leetgo_macOS_x86_64.tar.gz"
-      sha256 "5dcc579e185a7d9ea2aea6f577746785d585336ff2edba5a5f50918d3f507696"
+      url "https://github.com/j178/leetgo/releases/download/v1.3/leetgo_macOS_x86_64.tar.gz"
+      sha256 "54b97946af2430a69565f6e059bedd2a04a123173dbad7f7f11f7382bfc7b28a"
 
       def install
         bin.install "leetgo"
@@ -21,8 +21,8 @@ class Leetgo < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/j178/leetgo/releases/download/v1.2/leetgo_macOS_arm64.tar.gz"
-      sha256 "d96237c6091898404f9178ca329e4cb2e2ef09ca45bddff132dc6cc5296f4a44"
+      url "https://github.com/j178/leetgo/releases/download/v1.3/leetgo_macOS_arm64.tar.gz"
+      sha256 "4835b32feda1fcec2e85a3a24899764043f7d66ed566d10ef7b944adff626431"
 
       def install
         bin.install "leetgo"
@@ -34,9 +34,9 @@ class Leetgo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/leetgo/releases/download/v1.2/leetgo_linux_x86_64.tar.gz"
-      sha256 "0dac1b60d1ada49f7b85c30a634e9242c8de604abe23be5089c75189f851c978"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/j178/leetgo/releases/download/v1.3/leetgo_linux_arm64.tar.gz"
+      sha256 "bfc3ab82ffcd5c454747cc95d9def7a8902fd9809b7647edaffbf07b2fd6ec95"
 
       def install
         bin.install "leetgo"
@@ -45,9 +45,9 @@ class Leetgo < Formula
         fish_completion.install "completions/leetgo.fish"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/j178/leetgo/releases/download/v1.2/leetgo_linux_arm64.tar.gz"
-      sha256 "b686688df2457354cd253d37f0c1ad86d51e89084724ef1dc50811887a95762c"
+    if Hardware::CPU.intel?
+      url "https://github.com/j178/leetgo/releases/download/v1.3/leetgo_linux_x86_64.tar.gz"
+      sha256 "5af1dbf23215854fff49682fff4de5fc2f8353644dd1d517c0b4a2a99f387d3d"
 
       def install
         bin.install "leetgo"
