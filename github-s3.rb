@@ -5,21 +5,21 @@
 class GithubS3 < Formula
   desc "Use GitHub as a file server."
   homepage "https://github.com/j178/github-s3"
-  version "1.0-beta"
+  version "1.0"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/github-s3/releases/download/v1.0-beta/github-s3_Darwin_x86_64.tar.gz"
-      sha256 "086b3512470be7a3a5a6032a64cc84af80e1107b5fd23ec41b474f0b9f71c9fc"
+    if Hardware::CPU.arm?
+      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Darwin_arm64.tar.gz"
+      sha256 "603a7a06a4c94acce90aecf4e3fa3e932740291208bb84b50911c88935500590"
 
       def install
         bin.install "github-s3"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/j178/github-s3/releases/download/v1.0-beta/github-s3_Darwin_arm64.tar.gz"
-      sha256 "ac42160b2edf8062b495a29194d62ff8a84c90a60deaea7a1d0eebdc1e011eca"
+    if Hardware::CPU.intel?
+      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Darwin_x86_64.tar.gz"
+      sha256 "034195b1281f2d81f6cb75f55d176d53f69dab5b62028de4a50ee543f7e50e9b"
 
       def install
         bin.install "github-s3"
@@ -29,16 +29,16 @@ class GithubS3 < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/j178/github-s3/releases/download/v1.0-beta/github-s3_Linux_arm64.tar.gz"
-      sha256 "782b4d17a45e454c494eaf02e179449b271a2daaf64ae01e4db8ce6b13864d16"
+      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Linux_arm64.tar.gz"
+      sha256 "ba2f111c4c3411532004383c1444841f2a9c8eed73e5832b310a885feb730258"
 
       def install
         bin.install "github-s3"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/github-s3/releases/download/v1.0-beta/github-s3_Linux_x86_64.tar.gz"
-      sha256 "b57315c7d09212e0602f32194bca716eb5e95098f356890e654d5d799e8b0139"
+      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Linux_x86_64.tar.gz"
+      sha256 "c9a1acf1c48766f22df519049f65613a919279753eb53cd8d3f178b195ea127d"
 
       def install
         bin.install "github-s3"
