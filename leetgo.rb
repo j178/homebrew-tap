@@ -5,13 +5,13 @@
 class Leetgo < Formula
   desc "leetgo is a command line tool for leetcode.com. It can help you to login, submit, test, and view your submissions."
   homepage "https://github.com/j178/leetgo"
-  version "1.4.7"
+  version "1.4.8"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/leetgo/releases/download/v1.4.7/leetgo_macOS_x86_64.tar.gz"
-      sha256 "40986d0f3011ddc86b61880343fd99a8a2218467ac0c12b562e8374dacb09fb7"
+    on_intel do
+      url "https://github.com/j178/leetgo/releases/download/v1.4.8/leetgo_macOS_x86_64.tar.gz"
+      sha256 "44d47f36cb8e5eb1732cda8998dd80ef5724961f7db48210abbcf9badcd3c2a0"
 
       def install
         bin.install "leetgo"
@@ -20,9 +20,9 @@ class Leetgo < Formula
         fish_completion.install "completions/leetgo.fish"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/j178/leetgo/releases/download/v1.4.7/leetgo_macOS_arm64.tar.gz"
-      sha256 "69dad42d94bb04d55d154248abc8e0c7d590463e18fca122d3a3a7c5a963027e"
+    on_arm do
+      url "https://github.com/j178/leetgo/releases/download/v1.4.8/leetgo_macOS_arm64.tar.gz"
+      sha256 "dbc8550073958844081ac004adb102dc06fb96c20d730ec54d8012b447e2e4f4"
 
       def install
         bin.install "leetgo"
@@ -34,26 +34,30 @@ class Leetgo < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/leetgo/releases/download/v1.4.7/leetgo_linux_x86_64.tar.gz"
-      sha256 "48acf6550450033f12ee23a94e9505b36b6de64c3120b23fe38d9e0ff200b447"
+    on_intel do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/j178/leetgo/releases/download/v1.4.8/leetgo_linux_x86_64.tar.gz"
+        sha256 "d04529f125d2af22ba196529d131e934479fa572394378596f91c9439aa47df2"
 
-      def install
-        bin.install "leetgo"
-        bash_completion.install "completions/leetgo.bash" => "leetgo"
-        zsh_completion.install "completions/leetgo.zsh" => "_leetgo"
-        fish_completion.install "completions/leetgo.fish"
+        def install
+          bin.install "leetgo"
+          bash_completion.install "completions/leetgo.bash" => "leetgo"
+          zsh_completion.install "completions/leetgo.zsh" => "_leetgo"
+          fish_completion.install "completions/leetgo.fish"
+        end
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/j178/leetgo/releases/download/v1.4.7/leetgo_linux_arm64.tar.gz"
-      sha256 "7840aaf78646d3cc70377a47d0a8c687745d9449836c61316447fe421541786c"
+    on_arm do
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/j178/leetgo/releases/download/v1.4.8/leetgo_linux_arm64.tar.gz"
+        sha256 "d9941a700799d26b92a682b9b91100da8ace0296b7b059a99cc7c6393fa5dfc3"
 
-      def install
-        bin.install "leetgo"
-        bash_completion.install "completions/leetgo.bash" => "leetgo"
-        zsh_completion.install "completions/leetgo.zsh" => "_leetgo"
-        fish_completion.install "completions/leetgo.fish"
+        def install
+          bin.install "leetgo"
+          bash_completion.install "completions/leetgo.bash" => "leetgo"
+          zsh_completion.install "completions/leetgo.zsh" => "_leetgo"
+          fish_completion.install "completions/leetgo.fish"
+        end
       end
     end
   end
