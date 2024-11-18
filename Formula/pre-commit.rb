@@ -1,20 +1,17 @@
 class PreCommit < Formula
   desc "pre-commit implemeneted in Rust"
   homepage "https://github.com/j178/pre-commit-rs"
-  version "0.0.2"
+  version "0.0.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/pre-commit-rs/releases/download/v0.0.2/pre-commit-rs-aarch64-apple-darwin.tar.gz"
-      sha256 "96f16c51dba7c6d439b4ef48b7660ff1af7b18fda4c681eaf9d1505c199118c4"
+      url "https://github.com/j178/pre-commit-rs/releases/download/v0.0.3/pre-commit-rs-aarch64-apple-darwin.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/pre-commit-rs/releases/download/v0.0.2/pre-commit-rs-x86_64-apple-darwin.tar.gz"
-      sha256 "d4040c246b63382dafde75a7b818d91bdba390ebbd68d086786a86f4a2c39448"
+      url "https://github.com/j178/pre-commit-rs/releases/download/v0.0.3/pre-commit-rs-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/j178/pre-commit-rs/releases/download/v0.0.2/pre-commit-rs-x86_64-unknown-linux-gnu.tar.gz"
-    sha256 "cfab73bfd56bedfea50b0ce247c435c3feed8019d1a6b5b9a71768fffbf8263a"
+    url "https://github.com/j178/pre-commit-rs/releases/download/v0.0.3/pre-commit-rs-x86_64-unknown-linux-gnu.tar.gz"
   end
 
   BINARY_ALIASES = {
