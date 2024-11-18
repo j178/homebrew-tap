@@ -1,4 +1,4 @@
-class PreCommit < Formula
+class PreCommitRs < Formula
   desc "pre-commit implemeneted in Rust"
   homepage "https://github.com/j178/pre-commit-rs"
   version "0.0.3"
