@@ -5,21 +5,21 @@
 class GithubS3 < Formula
   desc "Use GitHub as a file server."
   homepage "https://github.com/j178/github-s3"
-  version "1.0"
+  version "1.0.1"
   license "MIT"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Darwin_arm64.tar.gz"
-      sha256 "603a7a06a4c94acce90aecf4e3fa3e932740291208bb84b50911c88935500590"
+    if Hardware::CPU.intel?
+      url "https://github.com/j178/github-s3/releases/download/v1.0.1/github-s3_Darwin_x86_64.tar.gz"
+      sha256 "107fe9f16854368ff4c58f16d3d6261d26762ea817ebb03a58ce23ea9047dcb5"
 
       def install
         bin.install "github-s3"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Darwin_x86_64.tar.gz"
-      sha256 "034195b1281f2d81f6cb75f55d176d53f69dab5b62028de4a50ee543f7e50e9b"
+    if Hardware::CPU.arm?
+      url "https://github.com/j178/github-s3/releases/download/v1.0.1/github-s3_Darwin_arm64.tar.gz"
+      sha256 "3f4cd1e8e03f4848b4073cd7b0c17140e7bbbb8dae5e9839a60d5b54c3b6ff89"
 
       def install
         bin.install "github-s3"
@@ -28,20 +28,24 @@ class GithubS3 < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Linux_arm64.tar.gz"
-      sha256 "ba2f111c4c3411532004383c1444841f2a9c8eed73e5832b310a885feb730258"
+    if Hardware::CPU.intel?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/j178/github-s3/releases/download/v1.0.1/github-s3_Linux_x86_64.tar.gz"
+        sha256 "916dfd479c8909755296a0eca62ace7ad6edb04ed428ba54409b71a1836306af"
 
-      def install
-        bin.install "github-s3"
+        def install
+          bin.install "github-s3"
+        end
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/j178/github-s3/releases/download/v1.0/github-s3_Linux_x86_64.tar.gz"
-      sha256 "c9a1acf1c48766f22df519049f65613a919279753eb53cd8d3f178b195ea127d"
+    if Hardware::CPU.arm?
+      if Hardware::CPU.is_64_bit?
+        url "https://github.com/j178/github-s3/releases/download/v1.0.1/github-s3_Linux_arm64.tar.gz"
+        sha256 "0670bb3cab7baa0bd3af025735e6ec11c759a132424f2ac78ede2d33bb3eb370"
 
-      def install
-        bin.install "github-s3"
+        def install
+          bin.install "github-s3"
+        end
       end
     end
   end
