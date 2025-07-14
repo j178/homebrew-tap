@@ -6,7 +6,7 @@ class Leetgo < Formula
   desc "leetgo is a command line tool for leetcode.com. It can help you to login, submit, test, and view your submissions."
   homepage "https://github.com/j178/leetgo"
   version "1.4.14"
-  disable! date: "2025-07-14", because: "the cask should be used now instead", replacement_cask: "leetgo"
+  disable! date: "2025-07-13", because: "the cask should be used now instead", replacement_cask: "leetgo"
   license "MIT"
 
   on_macos do
