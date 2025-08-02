@@ -1,17 +1,17 @@
 class Prefligit < Formula
-  desc "pre-commit implemented in Rust"
+  desc "Better `pre-commit`, re-engineered in Rust"
   homepage "https://github.com/j178/prefligit"
-  version "0.0.15"
+  version "0.0.16"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prefligit/releases/download/v0.0.15/prefligit-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prefligit/releases/download/v0.0.16/prefligit-aarch64-apple-darwin.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prefligit/releases/download/v0.0.15/prefligit-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prefligit/releases/download/v0.0.16/prefligit-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/j178/prefligit/releases/download/v0.0.15/prefligit-x86_64-unknown-linux-gnu.tar.gz"
+    url "https://github.com/j178/prefligit/releases/download/v0.0.16/prefligit-x86_64-unknown-linux-gnu.tar.gz"
   end
 
   BINARY_ALIASES = {
