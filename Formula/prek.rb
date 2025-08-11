@@ -1,17 +1,17 @@
 class Prek < Formula
   desc "Better `pre-commit`, re-engineered in Rust"
   homepage "https://github.com/j178/prek"
-  version "0.0.23"
+  version "0.0.24"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.0.23/prek-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.0.24/prek-aarch64-apple-darwin.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.0.23/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.0.24/prek-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/j178/prek/releases/download/v0.0.23/prek-x86_64-unknown-linux-gnu.tar.gz"
+    url "https://github.com/j178/prek/releases/download/v0.0.24/prek-x86_64-unknown-linux-gnu.tar.gz"
   end
 
   BINARY_ALIASES = {
