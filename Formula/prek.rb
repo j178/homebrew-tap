@@ -1,24 +1,49 @@
 class Prek < Formula
   desc "Better `pre-commit`, re-engineered in Rust"
   homepage "https://github.com/j178/prek"
-  version "0.0.28"
+  version "0.0.29"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.0.28/prek-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-aarch64-apple-darwin.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.0.28/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-x86_64-apple-darwin.tar.gz"
     end
   end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/j178/prek/releases/download/v0.0.28/prek-x86_64-unknown-linux-gnu.tar.gz"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-aarch64-unknown-linux-gnu.tar.gz"
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-x86_64-unknown-linux-gnu.tar.gz"
+    end
   end
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":     {},
-    "x86_64-apple-darwin":      {},
-    "x86_64-pc-windows-gnu":    {},
-    "x86_64-unknown-linux-gnu": {},
+    "aarch64-apple-darwin":                   {},
+    "aarch64-pc-windows-gnu":                 {},
+    "aarch64-unknown-linux-gnu":              {},
+    "aarch64-unknown-linux-musl-dynamic":     {},
+    "aarch64-unknown-linux-musl-static":      {},
+    "arm-unknown-linux-gnueabihf":            {},
+    "arm-unknown-linux-musl-dynamiceabihf":   {},
+    "arm-unknown-linux-musl-staticeabihf":    {},
+    "armv7-unknown-linux-gnueabihf":          {},
+    "armv7-unknown-linux-musl-dynamiceabihf": {},
+    "armv7-unknown-linux-musl-staticeabihf":  {},
+    "i686-pc-windows-gnu":                    {},
+    "i686-unknown-linux-gnu":                 {},
+    "i686-unknown-linux-musl-dynamic":        {},
+    "i686-unknown-linux-musl-static":         {},
+    "powerpc64-unknown-linux-gnu":            {},
+    "powerpc64le-unknown-linux-gnu":          {},
+    "riscv64gc-unknown-linux-gnu":            {},
+    "s390x-unknown-linux-gnu":                {},
+    "x86_64-apple-darwin":                    {},
+    "x86_64-pc-windows-gnu":                  {},
+    "x86_64-unknown-linux-gnu":               {},
+    "x86_64-unknown-linux-musl-dynamic":      {},
+    "x86_64-unknown-linux-musl-static":       {},
   }.freeze
 
   def target_triple
@@ -39,6 +64,7 @@ class Prek < Formula
   def install
     bin.install "prek" if OS.mac? && Hardware::CPU.arm?
     bin.install "prek" if OS.mac? && Hardware::CPU.intel?
+    bin.install "prek" if OS.linux? && Hardware::CPU.arm?
     bin.install "prek" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
