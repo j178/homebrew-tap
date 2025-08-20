@@ -1,21 +1,19 @@
 class Prek < Formula
   desc "Better `pre-commit`, re-engineered in Rust"
   homepage "https://github.com/j178/prek"
-  version "0.0.29"
+  version "0.1.0"
   if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-aarch64-apple-darwin.tar.gz"
-    end
+    url "https://github.com/j178/prek/releases/download/v0.1.0/prek-aarch64-apple-darwin.tar.gz" if Hardware::CPU.arm?
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.1.0/prek-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.1.0/prek-aarch64-unknown-linux-gnu.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.0.29/prek-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.1.0/prek-x86_64-unknown-linux-gnu.tar.gz"
     end
   end
 
@@ -38,7 +36,6 @@ class Prek < Formula
     "powerpc64-unknown-linux-gnu":            {},
     "powerpc64le-unknown-linux-gnu":          {},
     "riscv64gc-unknown-linux-gnu":            {},
-    "s390x-unknown-linux-gnu":                {},
     "x86_64-apple-darwin":                    {},
     "x86_64-pc-windows-gnu":                  {},
     "x86_64-unknown-linux-gnu":               {},
