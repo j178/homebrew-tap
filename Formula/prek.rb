@@ -1,21 +1,21 @@
 class Prek < Formula
   desc "Better `pre-commit`, re-engineered in Rust"
   homepage "https://prek.j178.dev/"
-  version "0.2.26"
+  version "0.2.27"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.2.26/prek-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.2.27/prek-aarch64-apple-darwin.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.2.26/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.2.27/prek-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.2.26/prek-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.2.27/prek-aarch64-unknown-linux-gnu.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.2.26/prek-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.2.27/prek-x86_64-unknown-linux-gnu.tar.gz"
     end
   end
   license "MIT"
@@ -36,8 +36,6 @@ class Prek < Formula
     "i686-unknown-linux-gnu":                 {},
     "i686-unknown-linux-musl-dynamic":        {},
     "i686-unknown-linux-musl-static":         {},
-    "powerpc64-unknown-linux-gnu":            {},
-    "powerpc64le-unknown-linux-gnu":          {},
     "riscv64gc-unknown-linux-gnu":            {},
     "s390x-unknown-linux-gnu":                {},
     "x86_64-apple-darwin":                    {},
