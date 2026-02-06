@@ -1,19 +1,19 @@
 class Prek < Formula
   desc "Better `pre-commit`, re-engineered in Rust"
   homepage "https://prek.j178.dev/"
-  version "0.3.1"
+  version "0.3.2"
   if OS.mac?
-    url "https://github.com/j178/prek/releases/download/v0.3.1/prek-aarch64-apple-darwin.tar.gz" if Hardware::CPU.arm?
+    url "https://github.com/j178/prek/releases/download/v0.3.2/prek-aarch64-apple-darwin.tar.gz" if Hardware::CPU.arm?
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.3.1/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.3.2/prek-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.3.1/prek-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.3.2/prek-aarch64-unknown-linux-gnu.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.3.1/prek-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.3.2/prek-x86_64-unknown-linux-gnu.tar.gz"
     end
   end
   license "MIT"
