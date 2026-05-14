@@ -1,21 +1,19 @@
 class Prek < Formula
   desc "A fast Git hook manager written in Rust, designed as a drop-in alternative to pre-commit, reimagined."
   homepage "https://prek.j178.dev/"
-  version "0.3.13"
+  version "0.4.0"
   if OS.mac?
-    if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.3.13/prek-aarch64-apple-darwin.tar.gz"
-    end
+    url "https://github.com/j178/prek/releases/download/v0.4.0/prek-aarch64-apple-darwin.tar.gz" if Hardware::CPU.arm?
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.3.13/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.4.0/prek-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.3.13/prek-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.4.0/prek-aarch64-unknown-linux-gnu.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.3.13/prek-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.4.0/prek-x86_64-unknown-linux-gnu.tar.gz"
     end
   end
   license "MIT"
