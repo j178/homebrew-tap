@@ -1,21 +1,21 @@
 class Prek < Formula
   desc "A fast Git hook manager written in Rust, designed as a drop-in alternative to pre-commit, reimagined."
   homepage "https://prek.j178.dev/"
-  version "0.4.13"
+  version "0.4.14"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.4.13/prek-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.4.14/prek-aarch64-apple-darwin.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.4.13/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.4.14/prek-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.4.13/prek-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.4.14/prek-aarch64-unknown-linux-gnu.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.4.13/prek-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.4.14/prek-x86_64-unknown-linux-gnu.tar.gz"
     end
   end
   license "MIT"
@@ -61,10 +61,18 @@ class Prek < Formula
   end
 
   def install
-    bin.install "prek" if OS.mac? && Hardware::CPU.arm?
-    bin.install "prek" if OS.mac? && Hardware::CPU.intel?
-    bin.install "prek" if OS.linux? && Hardware::CPU.arm?
-    bin.install "prek" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "prek"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "prek"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "prek"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "prek"
+    end
 
     install_binary_aliases!
 
