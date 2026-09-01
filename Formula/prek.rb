@@ -1,48 +1,36 @@
 class Prek < Formula
   desc "A fast Git hook manager written in Rust, designed as a drop-in alternative to pre-commit, reimagined."
   homepage "https://prek.j178.dev/"
-  version "0.5.0"
+  version "0.5.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.5.0/prek-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.5.1/prek-aarch64-apple-darwin.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.5.0/prek-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.5.1/prek-x86_64-apple-darwin.tar.gz"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/j178/prek/releases/download/v0.5.0/prek-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.5.1/prek-aarch64-unknown-linux-gnu.tar.gz"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/j178/prek/releases/download/v0.5.0/prek-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/j178/prek/releases/download/v0.5.1/prek-x86_64-unknown-linux-gnu.tar.gz"
     end
   end
   license "MIT"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":                   {},
-    "aarch64-pc-windows-gnu":                 {},
-    "aarch64-unknown-linux-gnu":              {},
-    "aarch64-unknown-linux-musl-dynamic":     {},
-    "aarch64-unknown-linux-musl-static":      {},
-    "arm-unknown-linux-gnueabihf":            {},
-    "arm-unknown-linux-musl-dynamiceabihf":   {},
-    "arm-unknown-linux-musl-staticeabihf":    {},
-    "armv7-unknown-linux-gnueabihf":          {},
-    "armv7-unknown-linux-musl-dynamiceabihf": {},
-    "armv7-unknown-linux-musl-staticeabihf":  {},
-    "i686-pc-windows-gnu":                    {},
-    "i686-unknown-linux-gnu":                 {},
-    "i686-unknown-linux-musl-dynamic":        {},
-    "i686-unknown-linux-musl-static":         {},
-    "riscv64gc-unknown-linux-gnu":            {},
-    "s390x-unknown-linux-gnu":                {},
-    "x86_64-apple-darwin":                    {},
-    "x86_64-pc-windows-gnu":                  {},
-    "x86_64-unknown-linux-gnu":               {},
-    "x86_64-unknown-linux-musl-dynamic":      {},
-    "x86_64-unknown-linux-musl-static":       {},
+    "aarch64-apple-darwin":               {},
+    "aarch64-pc-windows-gnu":             {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
   }.freeze
 
   def target_triple
